@@ -1,0 +1,631 @@
+:root {
+    --primary-bg: #0a192f;
+    --secondary-bg: #112240;
+    --accent-color: #33a0ff; /* A vibrant blue */
+    --accent-color-hover: #00bfff; /* A brighter blue for hover */
+    --text-primary: #ccd6f6;
+    --text-secondary: #8892b0;
+    --card-bg: rgba(17, 34, 64, 0.85);
+    --border-color: rgba(51, 160, 255, 0.2);
+    --shadow-color: rgba(51, 160, 255, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Offset for fixed navbar */
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Animated Background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: float 25s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    10% { opacity: 0.2; }
+    90% { opacity: 0.2; }
+    100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+/* General Styles */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.section {
+    padding: 6rem 0;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 4rem;
+    color: var(--text-primary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Navigation */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background: rgba(10, 25, 47, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+    padding: 0.75rem 0;
+    background: rgba(10, 25, 47, 0.9);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hero Section */
+#home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+#home h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, var(--text-primary), var(--accent-color-hover));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#home h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    min-height: 60px;
+}
+
+.hero-quote {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+    font-style: italic;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.cta-button:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* Stats Section */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.stat-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* About Section */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: var(--accent-color);
+    margin: 0 auto;
+    border: 4px solid var(--accent-color);
+    box-shadow: 0 0 40px var(--shadow-color);
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+.about-text p strong {
+    color: var(--text-primary);
+}
+
+/* Academics Section */
+.academics-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.academics-table th, .academics-table td {
+    padding: 1.25rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.academics-table th {
+    background-color: var(--secondary-bg);
+    color: var(--accent-color);
+    font-family: 'Poppins', sans-serif;
+}
+.academics-table tr:last-child td {
+    border-bottom: none;
+}
+.academics-table tr:hover {
+    background-color: rgba(51, 160, 255, 0.05);
+}
+
+.skills-container {
+    margin-top: 4rem;
+}
+.skills-title {
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+    font-family: 'Poppins', sans-serif;
+}
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: var(--secondary-bg);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* Publications Section */
+.publication-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.tab-button.active {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    border-color: var(--accent-color);
+}
+
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+.publication-list {
+    list-style: none;
+}
+.publication-item {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border-left: 4px solid var(--accent-color);
+    transition: all 0.3s ease;
+}
+.publication-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+.publication-item strong {
+    color: var(--text-primary);
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.publication-item em {
+    color: var(--accent-color);
+}
+
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: var(--secondary-bg);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+}
+
+.timeline-container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-container.left { left: 0; }
+.timeline-container.right { left: 50%; }
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: var(--primary-bg);
+    border: 4px solid var(--accent-color);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+.timeline-container.right::after { left: -10px; }
+
+.timeline-content {
+    padding: 20px 30px;
+    background: var(--card-bg);
+    position: relative;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+.timeline-content h3 {
+    color: var(--accent-color);
+    font-family: 'Poppins', sans-serif;
+}
+.timeline-content .duration {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+}
+
+.contact-email {
+    font-size: 1.25rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 2px solid var(--accent-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.contact-email:hover {
+    background: var(--accent-color);
+    color: var(--primary-bg);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--shadow-color);
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-bg);
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    margin-top: 4rem;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.mobile-menu span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.mobile-menu.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+.mobile-menu.active span:nth-child(2) { opacity: 0; }
+.mobile-menu.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
+
+
+/* Responsive Design */
+@media (max-width: 850px) {
+    .mobile-menu { display: flex; }
+    .nav-links {
+        position: fixed;
+        top: 70px; /* Adjust to match navbar height */
+        right: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: rgba(10, 25, 47, 0.98);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease-in-out;
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { font-size: 1.5rem; }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .about-image { margin-bottom: 2rem; }
+
+    .timeline::after { left: 31px; }
+    .timeline-container { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-container.left, .timeline-container.right { left: 0%; }
+    .timeline-container::after { left: 21px; }
+}
+
+
+/* ======================== RESPONSIVE DESIGN (MEDIA QUERIES) ======================== */
+
+/*
+  Media queries are the cornerstone of responsive design. They allow you to apply
+  CSS rules only when certain conditions are met, like the screen width being
+  above or below a certain size.
+
+  We will use a "desktop-first" approach here, where the default styles are for
+  large screens, and we add overrides for smaller screens. The `max-width` feature
+  means "apply these styles if the screen width is LESS than this value."
+*/
+
+/* For tablets and larger phones (screen width 768px or less) */
+@media (max-width: 700px) {
+  /* Reduce overall margins and padding to make better use of smaller screens */
+  main {
+    width: 95%; /* Use a bit more of the screen width */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  section {
+    padding: 1.5rem;
+  }
+  
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Adjust typography for medium screens */
+  h1 {
+    font-size: 2rem; 
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+/* For most mobile phones (screen width 600px or less) */
+@media (max-width: 600px) {
+  /* Use a slightly smaller base font size on small devices for better layout fit */
+  body {
+    font-size: 15px; /* Note: 16px is default, this is a minor adjustment */
+  }
+
+  /* The main content can go edge-to-edge for a more app-like feel */
+  main {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Stack navigation links vertically for easy tapping */
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem; /* Reduce gap for vertical stacking */
+  }
+
+  /* Adapt sections for a vertical, flowing layout instead of distinct cards */
+  section {
+    margin-bottom: 0; /* Remove space between sections */
+    padding: 1.5rem 1rem; /* Adjust padding for smaller screens (top/bottom, left/right) */
+    border-radius: 0; 
+    box-shadow: none; /* Remove shadow for a flatter mobile design */
+    border-bottom: 1px solid #dee2e6; /* Add a line to separate sections */
+  }
+
+  section:last-of-type {
+      border-bottom: none; /* Don't put a border on the very last section */
+  }
+
+  /* Make tables scrollable horizontally to prevent them from breaking the layout. */
+  /* This is a simple and effective way to handle wide data tables on narrow screens. */
+  .table-wrapper {
+    overflow-x: auto;
+    /* Add a subtle visual cue that the area is scrollable */
+    -webkit-overflow-scrolling: touch; /* Smoother scrolling on iOS */
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    margin-bottom: 1rem;
+  }
+  
+  /* To use the rule above, you would need to wrap your <table> in a <div>:
+     <div class="table-wrapper">
+       <table>...</table>
+     </div>
+     This is the most robust method.
+  */
+}

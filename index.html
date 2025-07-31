@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. B Baron Sam - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate on Scroll) Library CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Your Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="animated-bg" id="animatedBg"></div>
+
+    <nav id="navbar">
+        <div class="nav-container container">
+            <a href="#home" class="logo">Dr. B Baron Sam</a>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#academics" class="nav-link">Academics</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section">
+            <div class="container">
+                <h1 data-aos="fade-up">Dr. B Baron Sam</h1>
+                <h2 id="typed-text" data-aos="fade-up" data-aos-delay="100"></h2>
+                <p class="hero-quote" data-aos="fade-up" data-aos-delay="200">
+                    🚀 "Fly high, but stay connected to the ground 🛤 to your roots or else you will be lost"
+                </p>
+                <a href="#about" class="cta-button" data-aos="fade-up" data-aos-delay="300">Explore My Work</a>
+                
+                <div class="stats" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card"><span class="stat-number" data-count="17">0</span><div class="stat-label">Web of Science</div></div>
+                    <div class="stat-card"><span class="stat-number" data-count="14">0</span><div class="stat-label">Scopus Indexed</div></div>
+                    <div class="stat-card"><span class="stat-number" data-count="6">0</span><div class="stat-label">H-Index</div></div>
+                    <div class="stat-card"><span class="stat-number" data-count="147">0</span><div class="stat-label">Citations</div></div>
+                    <div class="stat-card"><span class="stat-number" data-count="13">0</span><div class="stat-label">Years Experience</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <div class="about-content">
+                    <div class="about-image" data-aos="zoom-in">👨‍🏫</div>
+                    <div class="about-text" data-aos="fade-left">
+                        <p>Hello, I am Dr. B Baron Sam, an accomplished educator with a diverse academic background and over <strong>13 years of experience</strong> in higher education. I’ve worked at Ponjesly College of Engineering, Sathyabama University, and VelTech Multitech Dr.RR & Dr.SR Engineering College.</p>
+                        <p>With a Ph.D. in Medical Image Processing and an MBA in HR, my mission is to nurture future professionals through quality education and impactful mentorship. Outside the classroom, I enjoy working on electronics and mechanical repairs.</p>
+                        <p><strong>My dream is to become a Principal and lead with innovation and purpose.</strong> I’m fueled by curiosity, driven by purpose, and dedicated to shaping educational futures.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academics Section -->
+        <section id="academics" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Academics & Expertise</h2>
+                <table class="academics-table" data-aos="fade-up" data-aos-delay="100">
+                    <thead>
+                        <tr><th>Degree</th><th>Discipline</th><th>Institution</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Ph.D</td><td>Medical Image Processing</td><td>Sathyabama University</td></tr>
+                        <tr><td>MBA</td><td>Human Resource Management</td><td>Annamalai University</td></tr>
+                        <tr><td>M.Tech</td><td>Computer Science & Engineering</td><td>Veltech Technical University</td></tr>
+                        <tr><td>B.Ed</td><td>Computer Science</td><td>Tamil Nadu Teachers Education University</td></tr>
+                        <tr><td>B.Tech</td><td>Information Technology</td><td>Anna University</td></tr>
+                    </tbody>
+                </table>
+                <div class="skills-container" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="skills-title">Research Interests</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Internet of Things</div>
+                        <div class="skill-tag">Image Processing</div>
+                        <div class="skill-tag">Computer Networks</div>
+                    </div>
+                    <h3 class="skills-title" style="margin-top: 2rem;">Tools & Languages</h3>
+                    <div class="skills-grid">
+                        <div class="skill-tag">Python</div>
+                        <div class="skill-tag">C</div>
+                        <div class="skill-tag">C++</div>
+                        <div class="skill-tag">Java</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Selected Publications</h2>
+                <div class="publication-tabs" data-aos="fade-up" data-aos-delay="100">
+                    <button class="tab-button active" data-tab="wos">Web of Science</button>
+                    <button class="tab-button" data-tab="scopus">Scopus</button>
+                    <button class="tab-button" data-tab="conferences">Conferences</button>
+                </div>
+
+                <div id="wos" class="tab-content active" data-aos="fade-up" data-aos-delay="200">
+                    <ul class="publication-list">
+                        <li class="publication-item"><strong>A combined score level fusion approach for multi model biometric system...</strong><em>– IJ Advanced and Applied Science</em></li>
+                        <li class="publication-item"><strong>An efficient grey wolf optimization algorithm based extended Kalman filtering...</strong><em>– Multimedia Tools & Applications</em></li>
+                        <li class="publication-item"><strong>Cloud Based Intelligent Transport System</strong><em>– Procedia Computer Science</em></li>
+                    </ul>
+                </div>
+                <div id="scopus" class="tab-content">
+                     <ul class="publication-list">
+                        <li class="publication-item"><strong>Medical Image Denoising Using Cuckoo Search Optimization...</strong><em>– JARDCS</em></li>
+                        <li class="publication-item"><strong>Android Based Application For Alerting The Elder Caregiver</strong><em>– IJ Applied Engineering Research</em></li>
+                        <li class="publication-item"><strong>CT and MRI Denoising Technique...</strong><em>– RJPBSC</em></li>
+                        <li class="publication-item"><em>(+ 11 more Scopus-indexed papers)</em></li>
+                    </ul>
+                </div>
+                <div id="conferences" class="tab-content">
+                     <ul class="publication-list">
+                        <li class="publication-item"><strong>Denoising Medical Images Using Hybrid Filter With Firefly Algorithm</strong><em>– ICRAECC 2019</em></li>
+                        <li class="publication-item"><strong>Speech to Text User Assistive Agent System for Impaired Persons</strong><em>– ICSTM</em></li>
+                        <li class="publication-item"><strong>Comparison of LIFI and WIFI...</strong><em>– ICICES</em></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Career Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-container left" data-aos="fade-right"><div class="timeline-content"><h3>HoD & Associate Professor (AI & DS)</h3><div class="duration">2024 – Present</div><p>DMI Engineering College</p></div></div>
+                    <div class="timeline-container right" data-aos="fade-left"><div class="timeline-content"><h3>Associate Professor in CSE</h3><div class="duration">2018 – 2024</div><p>Ponjesly College of Engineering</p></div></div>
+                    <div class="timeline-container left" data-aos="fade-right"><div class="timeline-content"><h3>Assistant Professor</h3><div class="duration">2013 – 2018</div><p>Sathyabama University</p></div></div>
+                    <div class="timeline-container right" data-aos="fade-left"><div class="timeline-content"><h3>Assistant Professor</h3><div class="duration">2011 – 2013</div><p>VelTech Multitech</p></div></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                 <div class="contact-content" data-aos="zoom-in">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p>I am open to collaborations, speaking engagements, and mentorship opportunities. Let's connect and shape the future of technology and education together.</p>
+                    <a href="mailto:prof.baronsam@gmail.com" class="contact-email">prof.baronsam@gmail.com</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year"></span> Dr. B Baron Sam. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+
+    <!-- Your Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS (Animate on Scroll)
+            AOS.init({
+                duration: 800,
+                once: true,
+                offset: 50
+            });
+
+            // Animated Background Particles
+            const bg = document.getElementById('animatedBg');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                const size = Math.random() * 4 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.animationDelay = Math.random() * 20 + 's';
+                particle.style.animationDuration = (Math.random() * 15 + 10) + 's';
+                bg.appendChild(particle);
+            }
+
+            // Typing Effect
+            new Typed('#typed-text', {
+                strings: ['HoD & Associate Professor', 'Researcher & Mentor', 'Academic Leader', 'Innovator in Tech Education'],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                loop: true
+            });
+
+            // Navbar Scroll Effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Animated Counters
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = +counter.getAttribute('data-count');
+                        let current = 0;
+                        const increment = target / 100;
+                        const timer = setInterval(() => {
+                            current += increment;
+                            if (current >= target) {
+                                counter.textContent = target;
+                                clearInterval(timer);
+                            } else {
+                                counter.textContent = Math.floor(current);
+                            }
+                        }, 20);
+                        observer.unobserve(counter);
+                    }
+                });
+            }, { threshold: 0.5 });
+            document.querySelectorAll('.stat-number').forEach(c => counterObserver.observe(c));
+
+            // Publication Tabs
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    button.classList.add('active');
+                    document.getElementById(button.dataset.tab).classList.add('active');
+                });
+            });
+
+            // Mobile Menu
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            mobileMenu.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+
+            // Close mobile menu when a link is clicked
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (navLinks.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+
+            // Active Nav Link on Scroll
+            const sections = document.querySelectorAll('.section');
+            const navLinkItems = document.querySelectorAll('.nav-link');
+            const scrollObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinkItems.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                        });
+                    }
+                });
+            }, { rootMargin: '-30% 0px -70% 0px' });
+            sections.forEach(sec => scrollObserver.observe(sec));
+            
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            console.log('🚀 Dr. B Baron Sam Portfolio - Loaded Successfully!');
+        });
+    </script>
+</body>
+</html>
